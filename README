@@ -1,0 +1,8 @@
+Tic Tac Toe Move calculator
+
+When given a board set calculate the next move that promotes the
+highest chance of winning.
+
+-1 means will lead to opponent winning
+0  means will lead to tie or no state of advantage
++1 means will lead to win
