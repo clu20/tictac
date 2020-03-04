@@ -106,6 +106,35 @@ class testtic(unittest.TestCase):
 			i+=1
 		self.assertTrue(over(bboard, 99))
 
+	#Diagnol(A) winner with other player values
+	# 2|0|1
+	# 2|1|0
+	# 1|0|2
+	def test_E_winner_A(self):
+		bboard = board
+		i = 0
+		while(i < 3):
+			board[2-i][i] = 1
+			i+=1
+		board[0][0] == 2
+		board[1][0] == 2
+		board[2][2] == 2
+		self.assertTrue(over(bboard, 99))
+
+	#Diagnol(A) winner with other player values
+	# 0|2|1
+	# 0|1|0
+	# 1|2|0
+	def test_E_winner_B(self):
+		bboard = board
+		i = 0
+		while(i < 3):
+			board[2-i][i] = 1
+			i+=1
+		board[0][1] == 2
+		board[2][1] == 2
+		self.assertTrue(over(bboard, 99))
+
 
 
 if __name__ == '__main__':

@@ -14,12 +14,24 @@ def over(board, freespaces):
 			for y in range(0,2):
 				if board[x][y] == 0:
 					break
+				#row win
 				elif board[x][y] == board[x][y+1]:
 					if(board[x][y] == board[x][y+2]):
 						return True
+					else:
+						break
+				#diagnol win
 				elif board[x][y] == board[x+1][y+1]:
 					if board[x][y] == board[x+2][y+2]:
 						return True
+					else:
+						break
+				#column win
+				elif board[x][y] == board[x+1][y]:
+					if board[x][y] == board[x+2][y]:
+						return True
+					else:
+						break
 
 def main():
 	rows, cols = (3, 3) 
@@ -27,6 +39,9 @@ def main():
 	board[2][0] = 1
 	board[2][1] = 1
 	board[2][2] = 1
+	board[0][0] = 2
+	board[0][1] = 2
+	board[0][2] = 1
 	print(over(board,99))
 
 if __name__ == "__main__":
